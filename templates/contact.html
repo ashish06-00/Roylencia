@@ -1,0 +1,314 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Roylencia Event Company{% endblock %}
+
+{% block content %}
+
+
+<!-- Contact Form Section -->
+<section class="contact-form-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-form-card">
+                    <div class="contact-form-header">
+                        <h2 class="section-title text-center">Get in Touch</h2>
+                        <p class="section-subtitle text-center">
+                            We're here to create extraordinary experiences tailored just for you.
+                            Share your vision, and let us bring it to life.
+                        </p>
+                    </div>
+
+                    <form method="POST" class="royal-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control royal-input" id="name" name="name" required>
+                                    <div class="form-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control royal-input" id="email" name="email" required>
+                                    <div class="form-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control royal-input" id="phone" name="phone">
+                                    <div class="form-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="event_type" class="form-label">Event Type</label>
+                                    <select class="form-control royal-input" id="event_type" name="event_type">
+                                        <option value="">Select Event Type</option>
+                                        <option value="wedding">Wedding</option>
+                                        <option value="corporate">Corporate Event</option>
+                                        <option value="birthday">Birthday Party</option>
+                                        <option value="anniversary">Anniversary</option>
+                                        <option value="graduation">Graduation</option>
+                                        <option value="conference">Conference</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="form-icon">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="event_date" class="form-label">Preferred Event Date</label>
+                                    <input type="date" class="form-control royal-input" id="event_date" name="event_date">
+                                    <div class="form-icon">
+                                        <i class="fas fa-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="guest_count" class="form-label">Expected Guests</label>
+                                    <input type="number" class="form-control royal-input" id="guest_count" name="guest_count" min="1" placeholder="Number of guests">
+                                    <div class="form-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="form-group">
+                                <label for="budget_range" class="form-label">Budget Range</label>
+                                <select class="form-control royal-input" id="budget_range" name="budget_range">
+                                    <option value="">Select Budget Range</option>
+                                    <option value="under_5k">Under 50 lack</option>
+                                    <option value="5k_10k">50 lack - 1 cr</option>
+                                    <option value="10k_25k">1 cr - 5 cr</option>
+                                    <option value="25k_50k">10 cr</option>
+                                    <option value="50k_plus">Ultra Luxury 50cr</option>
+                                </select>
+                                <div class="form-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="form-group">
+                                <label for="message" class="form-label">Event Details & Requirements *</label>
+                                <textarea class="form-control royal-input" id="message" name="message" rows="6" required placeholder="Tell us about your event vision, special requirements, venue preferences, and any specific needs..."></textarea>
+                                <div class="form-icon">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn royal-btn-primary btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Submit Event Inquiry
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="contact-info-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-info-content">
+                        <h5 class="contact-info-title">Visit Our Office</h5>
+                        <p class="contact-info-text">
+                            V v nagar<br>
+                            Anand District<br>
+                            Gujrat, 388120
+                        </p>
+                        <a href="#" class="contact-info-link">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-info-content">
+                        <h5 class="contact-info-title">Call Us</h5>
+                        <p class="contact-info-text">
+                            Main: +91 7096400610<br>
+                            VIP Line: +91 9687432598<br>
+                            24/7 Concierge: +91 7096400610
+                        </p>
+                        <a href="tel:+15551234567" class="contact-info-link">Call Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info-content">
+                        <h5 class="contact-info-title">Email Us</h5>
+                        <p class="contact-info-text">
+                            General: roylencia@gmail.com<br>
+                            VIP Services: roylencialuxury@gmail.com<br>
+                            Events: roylencia@gmail.com
+                        </p>
+                        <a href="mailto:info@royalluxury.com" class="contact-info-link">Send Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Office Hours Section -->
+<section class="office-hours-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="office-hours-card">
+                    <h3 class="section-title text-center mb-4">Office Hours</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="hours-group">
+                                <h5 class="hours-title">Regular Services</h5>
+                                <div class="hours-list">
+                                    <div class="hours-item">
+                                        <span class="hours-day">Monday - Friday</span>
+                                        <span class="hours-time">9:00 AM - 7:00 PM</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span class="hours-day">Saturday</span>
+                                        <span class="hours-time">10:00 AM - 5:00 PM</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span class="hours-day">Sunday</span>
+                                        <span class="hours-time">By Appointment</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="hours-group">
+                                <h5 class="hours-title">VIP Services</h5>
+                                <div class="hours-list">
+                                    <div class="hours-item">
+                                        <span class="hours-day">Concierge</span>
+                                        <span class="hours-time">24/7 Available</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span class="hours-day">Emergency</span>
+                                        <span class="hours-time">24/7 Available</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span class="hours-day">VIP Hotline</span>
+                                        <span class="hours-time">24/7 Available</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <p class="hours-note">
+                            <i class="fas fa-info-circle me-2"></i>
+                            For urgent matters outside regular hours, our VIP concierge service is always available.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title text-center mb-5">Frequently Asked Questions</h2>
+                <div class="accordion royal-accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1">
+                                How do I become a Royal Luxury client?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Becoming a Royal Luxury client begins with a consultation where we understand your unique needs and preferences. Contact us through any of our communication channels, and our team will guide you through our exclusive onboarding process.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2">
+                                What makes Royal Luxury different from other luxury service providers?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Our commitment to personalized excellence sets us apart. We don't just provide luxury services; we create bespoke experiences tailored to each client's unique vision. Our team's attention to detail, exclusive partnerships, and 24/7 availability ensure that every experience exceeds expectations.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3">
+                                Do you provide services internationally?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, Royal Luxury provides premium services worldwide through our global network of trusted partners and affiliates. Whether you need assistance in New York, London, Tokyo, or any major city, our team can coordinate exceptional experiences anywhere in the world.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4">
+                                How far in advance should I book your services?
+                            </button>
+                        </h2>
+                        <div id="faqCollapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                While we can accommodate last-minute requests through our VIP concierge service, we recommend booking 2-4 weeks in advance for optimal planning and execution. For major events or exclusive experiences, earlier booking ensures access to the most prestigious venues and services.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

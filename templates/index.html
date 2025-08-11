@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+
+{% block title %}Roylencia Event - Premium Event Management{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="container">
+            <div class="row align-items-center" style="min-height: 500px;">
+                <div class="col-lg-7 col-md-12 d-flex align-items-center" style="padding-right: 2rem;">
+                    <div class="hero-text-content" style="padding: 2rem 0; width: 100%;">
+                        <h1 class="hero-title">
+                            Welcome to<br>
+                            <span class="royal-luxury-text">
+                                <span class="text-royal">Roylencia</span>
+                                <span class="text-gold">Events</span>
+                            </span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Creating unforgettable events with luxury, elegance, and royal service excellence
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="{{ url_for('services') }}" class="btn royal-btn-primary me-3">
+                                <i class="fas fa-star me-2"></i>Explore Services
+                            </a>
+                            <a href="{{ url_for('contact') }}" class="btn royal-btn-outline">
+                                <i class="fas fa-phone me-2"></i>Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 d-flex justify-content-center align-items-center" style="padding: 2rem 0; padding-left: 2rem;">
+                    <div class="hero-wedding-image">
+                        <img src="{{ url_for('static', filename='image1.jpg') }}" alt="Luxury Wedding Event" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title">Why Choose Roylencia Event</h2>
+                <p class="section-subtitle">Experience exceptional event management with royal-class service</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h4 class="feature-title">Premium Quality</h4>
+                    <p class="feature-description">
+                        Every detail crafted to perfection with the highest standards of luxury and elegance.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h4 class="feature-title">Exclusive Experience</h4>
+                    <p class="feature-description">
+                        Tailored experiences designed exclusively for discerning clients who appreciate the finer things.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h4 class="feature-title">Award Winning</h4>
+                    <p class="feature-description">
+                        Recognized excellence in luxury services with numerous prestigious awards and accolades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview Section -->
+<section class="about-preview-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="about-image-container">
+                    <div class="luxury-illustration">
+                        <!-- Royal Palace SVG Illustration -->
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="royal-palace-svg">
+                            <defs>
+                                <linearGradient id="palaceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4B0082"/>
+                                    <stop offset="50%" style="stop-color:#301934"/>
+                                    <stop offset="100%" style="stop-color:#6B46C1"/>
+                                </linearGradient>
+                                <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFD700"/>
+                                    <stop offset="100%" style="stop-color:#FFA500"/>
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Palace Base -->
+                            <rect x="50" y="180" width="300" height="80" fill="url(#palaceGradient)"/>
+                            <rect x="50" y="170" width="300" height="20" fill="url(#goldAccent)"/>
+
+                            <!-- Palace Towers -->
+                            <rect x="80" y="120" width="60" height="60" fill="url(#palaceGradient)"/>
+                            <rect x="160" y="100" width="80" height="80" fill="url(#palaceGradient)"/>
+                            <rect x="260" y="120" width="60" height="60" fill="url(#palaceGradient)"/>
+
+                            <!-- Tower Roofs -->
+                            <polygon points="110,120 80,80 140,80" fill="url(#goldAccent)"/>
+                            <polygon points="200,100 160,50 240,50" fill="url(#goldAccent)"/>
+                            <polygon points="290,120 260,80 320,80" fill="url(#goldAccent)"/>
+
+                            <!-- Windows -->
+                            <rect x="90" y="140" width="12" height="20" fill="#FFD700"/>
+                            <rect x="108" y="140" width="12" height="20" fill="#FFD700"/>
+                            <rect x="126" y="140" width="12" height="20" fill="#FFD700"/>
+
+                            <rect x="180" y="130" width="15" height="25" fill="#FFD700"/>
+                            <rect x="202" y="130" width="15" height="25" fill="#FFD700"/>
+                            <rect x="180" y="100" width="15" height="20" fill="#FFD700"/>
+                            <rect x="202" y="100" width="15" height="20" fill="#FFD700"/>
+
+                            <rect x="275" y="140" width="12" height="20" fill="#FFD700"/>
+                            <rect x="293" y="140" width="12" height="20" fill="#FFD700"/>
+
+                            <!-- Main Entrance -->
+                            <path d="M180,180 Q200,160 220,180 L220,240 L180,240 Z" fill="url(#goldAccent)"/>
+                            <rect x="185" y="200" width="30" height="40" fill="#301934"/>
+
+                            <!-- Decorative Elements -->
+                            <circle cx="200" cy="65" r="8" fill="#FFD700"/>
+                            <polygon points="200,55 195,65 205,65" fill="#FFD700"/>
+
+                            <!-- Luxury Garden Elements -->
+                            <ellipse cx="120" cy="270" rx="15" ry="8" fill="#228B22" opacity="0.6"/>
+                            <ellipse cx="280" cy="270" rx="15" ry="8" fill="#228B22" opacity="0.6"/>
+                            <rect x="115" y="265" width="3" height="15" fill="#8B4513"/>
+                            <rect x="125" y="265" width="3" height="15" fill="#8B4513"/>
+                            <rect x="275" y="265" width="3" height="15" fill="#8B4513"/>
+                            <rect x="285" y="265" width="3" height="15" fill="#8B4513"/>
+                        </svg>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h2 class="section-title text-start mb-4">A Legacy of Excellence</h2>
+                    <p class="about-text">
+                        For over two decades, Royal Luxury has been synonymous with unparalleled elegance and
+                        sophisticated service. Our commitment to excellence has made us the preferred choice for
+                        those who demand nothing but the finest.
+                    </p>
+                    <p class="about-text">
+                        Every experience we curate is a masterpiece, designed to exceed expectations and create
+                        memories that last a lifetime. Discover what makes us truly exceptional.
+                    </p>
+                    <a href="{{ url_for('about') }}" class="btn royal-btn-primary">
+                        <i class="fas fa-arrow-right me-2"></i>Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="services-preview-section">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title">Our Signature Services</h2>
+                <p class="section-subtitle">Curated experiences for the most discerning clientele</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h5 class="service-title">Concierge Services</h5>
+                    <p class="service-description">24/7 personal assistance for all your luxury needs</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h5 class="service-title">Private Travel</h5>
+                    <p class="service-description">Exclusive travel experiences with premium comfort</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h5 class="service-title">Elite Events</h5>
+                    <p class="service-description">Unforgettable events crafted to perfection</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="service-title">VIP Access</h5>
+                    <p class="service-description">Exclusive access to premium venues and experiences</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('services') }}" class="btn royal-btn-outline">
+                <i class="fas fa-eye me-2"></i>View All Services
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2 class="cta-title">Ready to Experience Royal Luxury?</h2>
+                <p class="cta-subtitle">Experience exceptional service and unparalleled quality</p>
+                <a href="{{ url_for('contact') }}" class="btn royal-btn-primary btn-lg">
+                    <i class="fas fa-crown me-2"></i>Get Started Today
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

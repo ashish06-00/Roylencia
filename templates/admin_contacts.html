@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Database - Admin View{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="page-header-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="page-title">Contact Form Submissions</h1>
+                <p class="page-subtitle">Event inquiries stored in database</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="admin-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="admin-stats mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="stat-card text-center p-3">
+                                <h3 class="text-gold">{{ contacts|length }}</h3>
+                                <p class="mb-0">Total Inquiries</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card text-center p-3">
+                                <h3 class="text-royal">{{ contacts|selectattr('status', 'equalto', 'new')|list|length }}</h3>
+                                <p class="mb-0">New Inquiries</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card text-center p-3">
+                                <h3 class="text-success">{{ contacts|selectattr('status', 'equalto', 'contacted')|list|length }}</h3>
+                                <p class="mb-0">Contacted</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% if contacts %}
+                <div class="contact-cards">
+                    {% for contact in contacts %}
+                    <div class="contact-card mb-4 p-4">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="contact-info">
+                                    <h4 class="contact-name text-royal">
+                                        {{ contact.name }}
+                                        <span class="badge badge-{{ 'success' if contact.status == 'contacted' else 'primary' if contact.status == 'new' else 'secondary' }} ms-2">
+                                            {{ contact.status.title() }}
+                                        </span>
+                                    </h4>
+                                    <div class="contact-details mb-3">
+                                        <p class="mb-1"><strong>Email:</strong> {{ contact.email }}</p>
+                                        {% if contact.phone %}
+                                        <p class="mb-1"><strong>Phone:</strong> {{ contact.phone }}</p>
+                                        {% endif %}
+                                        {% if contact.event_type %}
+                                        <p class="mb-1"><strong>Event Type:</strong> {{ contact.event_type.title() }}</p>
+                                        {% endif %}
+                                        {% if contact.event_date %}
+                                        <p class="mb-1"><strong>Event Date:</strong> {{ contact.event_date.strftime('%B %d, %Y') }}</p>
+                                        {% endif %}
+                                        {% if contact.guest_count %}
+                                        <p class="mb-1"><strong>Guest Count:</strong> {{ contact.guest_count }}</p>
+                                        {% endif %}
+                                        {% if contact.budget_range %}
+                                        <p class="mb-1"><strong>Budget:</strong> {{ contact.budget_range.replace('_', ' ').title() }}</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="contact-message">
+                                        <strong>Message:</strong>
+                                        <p class="mt-1">{{ contact.message }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-lg-end">
+                                <div class="contact-meta">
+                                    <p class="text-muted mb-1">
+                                        <strong>Submitted:</strong><br>
+                                        {{ contact.created_at.strftime('%B %d, %Y at %I:%M %p') }}
+                                    </p>
+                                    <p class="text-muted mb-0">
+                                        <strong>ID:</strong> #{{ contact.id }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="text-center py-5">
+                    <div class="empty-state">
+                        <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+                        <h4 class="text-muted">No Contact Submissions Yet</h4>
+                        <p class="text-muted">Contact form submissions will appear here when customers submit inquiries.</p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.admin-section {
+    background: var(--warm-gray);
+    min-height: 60vh;
+}
+
+.stat-card {
+    background: var(--pearl-white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.contact-card {
+    background: var(--pearl-white);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-name {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+}
+
+.badge-primary {
+    background: var(--royal-purple);
+    color: white;
+}
+
+.badge-success {
+    background: #28a745;
+    color: white;
+}
+
+.badge-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.contact-details p {
+    font-size: 0.95rem;
+    color: var(--charcoal);
+}
+
+.contact-message {
+    background: rgba(255, 215, 0, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--royal-gold);
+}
+
+.empty-state {
+    padding: 3rem 0;
+}
+</style>
+{% endblock %}
